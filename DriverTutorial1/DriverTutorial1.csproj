@@ -38,6 +38,9 @@
     <Reference Include="log4net">
       <HintPath>..\ThirdParty\log4net\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\ThirdParty\moq\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\ThirdParty\nunit\nunit.framework.dll</HintPath>
     </Reference>
@@ -56,7 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DriverExample1.cs" />
+    <Compile Include="DriverWith3DModelExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotExample1.cs" />
     <Compile Include="Test\DriverExample1Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

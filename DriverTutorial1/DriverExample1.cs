@@ -6,7 +6,6 @@
 using System;
 using System.Data;
 using System.Xml;
-using UKRobotics.Common;
 using UKRobotics.Common.Exceptions;
 using UKRobotics.Common.Xml;
 using UKRobotics.SystemInterfaces.Devices;
@@ -20,7 +19,7 @@ namespace UKRobotics.DriverTutorial1
     /// </summary>
     public class DriverExample1 : DeviceBase
     {
-        private static readonly XmlAttributeConst IPAddressXmlAttributeConstant = new XmlAttributeConst("ip-address");
+        private static readonly StringXmlAttributeConst IPAddressXmlAttributeConstant = new StringXmlAttributeConst("ip-address");
 
         private string _deviceIPAddress = string.Empty;
 
@@ -52,10 +51,8 @@ namespace UKRobotics.DriverTutorial1
         {
             base.FromXmlElement(deviceElement);
 
-            XmlUtils.ReadOptionalString(
+            _deviceIPAddress = IPAddressXmlAttributeConstant.ReadOptional(
                 deviceElement, 
-                IPAddressXmlAttributeConstant, 
-                ref _deviceIPAddress,
                 string.Empty);
         }
 
@@ -69,10 +66,9 @@ namespace UKRobotics.DriverTutorial1
         {
             base.ToXmlElement(deviceElement);
 
-            XmlUtils.WriteString(
-                deviceElement, 
-                IPAddressXmlAttributeConstant, 
-                _deviceIPAddress );
+            IPAddressXmlAttributeConstant.Write(
+                deviceElement,
+                _deviceIPAddress);
         }
 
         
