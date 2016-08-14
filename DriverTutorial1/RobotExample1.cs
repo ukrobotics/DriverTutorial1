@@ -10,7 +10,7 @@ namespace UKRobotics.DriverTutorial1
 
 
     /// <summary>
-    /// This is a simple robot example. It extends TransferDeviceBase which provides most of the implementation of ITransferDevice except for //
+    /// This is a simple robot example. It extends TransferDeviceBase which provides most of the implementation of ITransferDevice except for
     /// the code shown in this class.
     /// 
     /// 

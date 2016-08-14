@@ -10,7 +10,8 @@ namespace UKRobotics.DriverTutorial1
     /// 
     /// 
     /// </summary>
-    [ModelFile(@"devices\drivertutorial\DriverExample1.obj")]     // this attribute tells the scheduler where it should load the 3D simulation model file from. This is a relative path to the root defined in the configuration.
+    [ModelFile(@"devices\drivertutorial\DriverExample1.obj")]     // this attribute tells the scheduler where it should load the 3D simulation model file from. 
+                                                                // This is a relative path to the root defined in the configuration. You will find DriverExample1.obj and .mtl files in the Revolution installation
     public class DriverWith3DModelExample : DeviceBase
     {
         
