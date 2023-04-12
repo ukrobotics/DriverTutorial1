@@ -119,6 +119,12 @@ See the class DriverExample1Test in this repo for an example on how to support u
 ~~~
 
 
+## More information
+See the following for more information about Revolution and also driver development:
+- [Revolution user docs](https://ukrobotics.tech/docs/revolution/revo-introduction/)
+- [Revolution driver developer docs](https://ukrobotics.atlassian.net/wiki/spaces/RDD/overview?key=RDD)
+
+
 ## Feedback wanted!
 Are we missing an example in this repo, please let us know!
 
