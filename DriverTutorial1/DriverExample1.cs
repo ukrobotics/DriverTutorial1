@@ -104,15 +104,11 @@ namespace UKRobotics.DriverTutorial1
         /// <param name="rpm">RPM</param>
         /// <param name="duration">Spin duration</param>
         [DeviceOperation]
-        [ScheduleParameter(typeof(int), "AchievedRPM", ParameterDirection.Output)]
         public void Spin(
             IDeviceOperationContext deviceOperationContext, 
             int rpm, TimeSpan duration )
         {
-            Logger.Info(String.Format(
-                "Spin at rpm {0} for duration {1}secs", 
-                rpm, 
-                duration.TotalSeconds)); // log the parameters
+            Logger.Info($"Spin at rpm {rpm} for duration {duration.TotalSeconds}secs"); // log the parameters
         }
 
         /// <summary>
