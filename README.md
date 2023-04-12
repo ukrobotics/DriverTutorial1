@@ -75,6 +75,57 @@ error handling and also write to the Revolution Event Database to record actions
 of this simple demo class, please reach out to UK Robotics for more information/support.
 
 
+## Unit Testing
+We are big fans of unit testing and hope you are also!!!  
+The core of Revolution has over 5000 NUnit unit tests and we always endevour to ensure that all parts of Revolution, including plugins, are easily testable.
+
+See the class DriverExample1Test in this repo for an example on how to support unit testing of your device driver class, or see below:-
+~~~
+    /// <summary>
+    ///
+    /// How to unit test your device...
+    /// 
+    /// </summary>
+    [TestFixture]
+    public class DriverExample1Test
+    {
+
+
+        [Test]
+        public void TestFromXml0()
+        {
+            //////////////
+            //Arrange
+            string xml = @"<device ip-address=""192.168.0.123"" />";
+            XmlDocument deviceDocument = XmlUtils.GetXmlDocument(xml);
+
+            DriverExample1 driverExample1 = new DriverExample1();
+
+            Mock<ISystem> systemMock = new Mock<ISystem>();
+            driverExample1.DeviceContext = DeviceTestUtils.CreateDeviceContext(systemMock.Object, driverExample1);
+
+            /////////////
+            // Act
+            driverExample1.FromXmlElement(deviceDocument.DocumentElement);
+
+            /////////////
+            // Assert
+            Assert.AreEqual("192.168.0.123", driverExample1.DeviceIPAddress);
+        }
+
+        
+    }
+}
+~~~
+
+
+## Feedback wanted!
+Are we missing an example in this repo, please let us know!
+
+
+
+
+
 
 
 
